@@ -1,0 +1,137 @@
+:root{
+    font-size:16px;
+    font-family: 'Ubuntu Condensed',sans-serif;
+    --text-primary:black;
+    --bg-primary:lightblue;
+    --bg-header:lightgrey; 
+    --bg-box:lightgrey; 
+    margin:0px;
+    padding:0px;
+}
+/*body styles*/
+body{
+    width:100%;
+    height:100vh;
+    display: grid;
+    background-color: white;
+    grid-template-areas:
+        "nav nav nav"
+        "item item item"
+        "content content content";
+    grid-template-rows:.5fr 1fr 4fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+button{
+    border:none;
+    color:black;
+    text-transform: uppercase;
+    cursor: pointer;   
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+}
+button:hover{
+    color:var(--bg-primary);
+}
+
+/*header styles*/
+.header{
+    display: flex;
+    grid-area:nav;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.header>.title{
+    margin-left:5%;
+}
+.loginBtn{
+    margin-right:10%;
+}
+
+/*book input container*/
+.bookInputContainer{
+    grid-area:item;
+   
+    background-color: white;
+}
+
+.book_info{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center
+}
+.main_buttons{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.main_buttons>button:hover{
+    color:var(--bg-primary)
+}
+
+label{
+    font-size:20px;
+}
+.book_title,.book_author,.book_pages,.read_notread{
+    padding:20px;
+    text-transform: uppercase;
+}
+.bookInput{
+    width:100%;
+    border-radius: 5px;
+    font-size: 20px;;
+}
+select:focus,input:focus{
+    outline: 1px solid blue;
+}
+
+/*main library display*/
+main{
+    grid-area:content;
+    border-radius: 10px;
+    background-color: var(--bg-primary);   
+}
+
+.book_display{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto 1fr);  
+    display: grid;
+    grid-gap:10px;
+    margin:10px;   
+}
+
+.books{
+    display:flex;
+    flex-direction: column;
+    border-radius:10px;
+    background-color: aliceblue;
+}
+
+
+.books>div{
+    justify-content: center;
+    display:flex;
+    width:100%;
+}
+.statusRead_Label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.statusRead_Label>button{
+    background-color: aliceblue;
+}
+
+/*remove button*/
+.remove_entryBtn{
+    margin-top:5%;
+    margin-bottom:2%;
+}
+.remove_entryBtn>button{
+    background-color: pink;
+    border-radius: 10px;
+}
